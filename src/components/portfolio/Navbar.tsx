@@ -38,19 +38,19 @@ export function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3" : "py-5"}`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-2" : "py-3 sm:py-5"}`}
     >
-      <div className={`mx-auto max-w-6xl px-4 sm:px-6 ${scrolled ? "" : ""}`}>
-        <div className="glass rounded-2xl px-5 py-3 flex items-center justify-between">
-          <a href="#home" className="font-mono text-sm tracking-wider">
+      <div className="mx-auto max-w-6xl px-3 sm:px-6">
+        <div className="glass rounded-2xl px-4 sm:px-5 py-2.5 sm:py-3 flex items-center justify-between">
+          <a href="#home" className="font-mono text-xs sm:text-sm tracking-wider">
             <span className="text-gradient font-bold">{"</>"} rahul.dev</span>
           </a>
-          <ul className="hidden md:flex items-center gap-1">
+          <ul className="hidden md:flex items-center gap-0.5">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className={`relative px-3 py-1.5 text-sm rounded-lg transition-colors ${
+                  className={`relative px-3 py-1.5 text-xs sm:text-sm rounded-lg transition-colors ${
                     active === l.href.slice(1) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -75,10 +75,10 @@ export function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="md:hidden glass rounded-2xl mt-2 p-4 flex flex-col gap-2"
+              className="md:hidden glass rounded-2xl mt-2 p-3 flex flex-col gap-1"
             >
               {links.map((l) => (
-                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="px-3 py-2 rounded-lg hover:bg-white/5">
+                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="px-3 py-2.5 rounded-lg text-sm hover:bg-white/5 transition">
                   {l.label}
                 </a>
               ))}

@@ -19,8 +19,8 @@ const traits = [
 export function About() {
   return (
     <Section id="about" eyebrow="about me" title={<>The <span className="text-gradient">developer</span> behind the code</>}>
-      <div className="grid md:grid-cols-2 gap-10 items-start">
-        <div className="space-y-5 text-muted-foreground leading-relaxed">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
+        <div className="space-y-4 sm:space-y-5 text-muted-foreground leading-relaxed text-sm sm:text-base">
           <p>
             I'm <span className="text-foreground font-medium">Rahul Singh</span>, a B.Tech CSE student specializing in
             <span className="text-[var(--neon-cyan)]"> Artificial Intelligence and Data Science</span>. I love turning
@@ -31,7 +31,7 @@ export function About() {
             impactful projects that solve real problems — bridging research-grade
             models with delightful product experiences.
           </p>
-          <div className="grid grid-cols-2 gap-4 pt-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4">
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
@@ -39,15 +39,15 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="glass rounded-xl p-4"
+                className="glass rounded-xl p-3 sm:p-4"
               >
-                <div className="text-2xl font-bold text-gradient">{s.value}</div>
-                <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
+                <div className="text-xl sm:text-2xl font-bold text-gradient">{s.value}</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground mt-1">{s.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {traits.map((t, i) => (
             <motion.div
               key={t.title}
@@ -56,13 +56,13 @@ export function About() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="glass rounded-2xl p-5 hover:border-[var(--neon-purple)] transition-colors group"
+              className="glass rounded-2xl p-4 sm:p-5 hover:border-[var(--neon-purple)] transition-colors group"
             >
-              <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <t.icon size={18} />
+              <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-primary flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <t.icon size={16} />
               </div>
-              <h3 className="font-semibold mb-1">{t.title}</h3>
-              <p className="text-sm text-muted-foreground">{t.desc}</p>
+              <h3 className="font-semibold text-sm sm:text-base mb-1">{t.title}</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">{t.desc}</p>
             </motion.div>
           ))}
         </div>

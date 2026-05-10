@@ -16,8 +16,8 @@ export function Contact() {
 
   return (
     <Section id="contact" eyebrow="contact" title={<>Let's <span className="text-gradient">build</span> something</>}>
-      <div className="grid md:grid-cols-[1fr_1.2fr] gap-8">
-        <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-6 md:gap-8">
+        <div className="space-y-3 sm:space-y-4 order-2 md:order-1">
           {[
             { icon: Mail, label: "Email", value: "rsnr936313@gmail.com", href: "mailto:rsnr936313@gmail.com" },
             { icon: Phone, label: "Phone", value: "+91 9460309339", href: "tel:+919460309339" },
@@ -31,18 +31,18 @@ export function Contact() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ x: 4 }}
-              className="glass rounded-xl p-4 flex items-center gap-4 hover:border-[var(--neon-cyan)] transition"
+              className="glass rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:border-[var(--neon-cyan)] transition text-sm sm:text-base"
             >
-              <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center"><c.icon size={16} /></div>
-              <div>
+              <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0"><c.icon size={16} /></div>
+              <div className="min-w-0">
                 <div className="text-xs font-mono text-muted-foreground">{c.label}</div>
-                <div className="font-medium text-sm">{c.value}</div>
+                <div className="font-medium text-xs sm:text-sm truncate">{c.value}</div>
               </div>
             </motion.a>
           ))}
-          <div className="flex gap-3 pt-2">
-            <a href="https://github.com/Rahul936313" target="_blank" rel="noreferrer" className="glass p-3 rounded-xl hover:text-[var(--neon-cyan)] hover:scale-110 transition"><Github size={18} /></a>
-            <a href="https://www.linkedin.com/in/rahul-singh-nirwan-41303a323/" target="_blank" rel="noreferrer" className="glass p-3 rounded-xl hover:text-[var(--neon-blue)] hover:scale-110 transition"><Linkedin size={18} /></a>
+          <div className="flex gap-2 sm:gap-3 pt-2">
+            <a href="https://github.com/Rahul936313" target="_blank" rel="noreferrer" className="glass p-2.5 sm:p-3 rounded-xl hover:text-[var(--neon-cyan)] hover:scale-110 transition"><Github size={18} /></a>
+            <a href="https://www.linkedin.com/in/rahul-singh-nirwan-41303a323/" target="_blank" rel="noreferrer" className="glass p-2.5 sm:p-3 rounded-xl hover:text-[var(--neon-blue)] hover:scale-110 transition"><Linkedin size={18} /></a>
           </div>
         </div>
         <motion.form
@@ -50,15 +50,15 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass rounded-2xl p-6 space-y-4 relative overflow-hidden"
+          className="glass rounded-2xl p-4 sm:p-6 space-y-4 relative overflow-hidden order-1 md:order-2"
         >
           <div className="absolute inset-0 grid-bg opacity-30 -z-10" />
-          <div className="grid sm:grid-cols-2 gap-4">
-            <input required name="name" placeholder="Your name" className="bg-background/50 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--neon-cyan)] transition" />
-            <input required type="email" name="email" placeholder="Email" className="bg-background/50 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--neon-cyan)] transition" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <input required name="name" placeholder="Your name" className="bg-background/50 border border-border rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[var(--neon-cyan)] transition" />
+            <input required type="email" name="email" placeholder="Email" className="bg-background/50 border border-border rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[var(--neon-cyan)] transition" />
           </div>
-          <textarea required name="message" rows={5} placeholder="Tell me about your project..." className="w-full bg-background/50 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--neon-purple)] transition resize-none" />
-          <button type="submit" className="w-full inline-flex items-center justify-center gap-2 bg-gradient-primary py-3 rounded-lg font-medium glow hover:scale-[1.02] transition">
+          <textarea required name="message" rows={4} placeholder="Tell me about your project..." className="w-full bg-background/50 border border-border rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[var(--neon-purple)] transition resize-none" />
+          <button type="submit" className="w-full inline-flex items-center justify-center gap-2 bg-gradient-primary py-2.5 sm:py-3 rounded-lg font-medium text-sm glow hover:scale-[1.02] transition">
             {sent ? "Opening mail client…" : <>Send Message <Send size={14} /></>}
           </button>
         </motion.form>

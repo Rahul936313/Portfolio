@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
+import rahulImage from "@/assets/rahul.jpg?url";
 
 const phrases = [
   "AI & Data Science Developer",
@@ -39,17 +40,17 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 sm:pt-24">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-28 sm:pb-16">
       <div
         className="absolute inset-0 -z-10 opacity-40 transition-all duration-300"
         style={{ background: `radial-gradient(600px circle at ${mouse.x}% ${mouse.y}%, oklch(0.65 0.27 295 / 0.35), transparent 60%)` }}
       />
       <div className="absolute inset-0 grid-bg opacity-30 -z-10" />
-      <div className="absolute top-20 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 rounded-full bg-[var(--neon-blue)] opacity-20 blur-3xl animate-blob -z-10" />
-      <div className="absolute bottom-20 right-4 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-[var(--neon-purple)] opacity-20 blur-3xl animate-blob -z-10" style={{ animationDelay: "4s" }} />
+      <div className="absolute top-12 left-2 sm:left-10 w-32 h-32 sm:w-72 sm:h-72 rounded-full bg-[var(--neon-blue)] opacity-20 blur-3xl animate-blob -z-10" />
+      <div className="absolute bottom-12 right-2 sm:right-10 w-40 h-40 sm:w-96 sm:h-96 rounded-full bg-[var(--neon-purple)] opacity-20 blur-3xl animate-blob -z-10" style={{ animationDelay: "4s" }} />
       <div className="hidden sm:block absolute top-1/2 left-1/3 w-80 h-80 rounded-full bg-[var(--neon-pink)] opacity-10 blur-3xl animate-blob -z-10" style={{ animationDelay: "8s" }} />
 
-      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-10 items-center">
+      <div className="max-w-6xl w-full mx-auto px-3 sm:px-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-6 sm:gap-8 md:gap-10 items-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
@@ -93,7 +94,7 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-neon blur-3xl opacity-40 rounded-full" />
           <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full p-1 bg-gradient-neon animate-float">
             <div className="w-full h-full rounded-full overflow-hidden bg-card">
-              <img src={new URL("../../assets/rahul.jpg", import.meta.url).href} alt="Rahul Singh" className="w-full h-full object-cover" />
+              <img src={rahulImage} alt="Rahul Singh" className="w-full h-full object-cover" />
             </div>
           </div>
           <motion.div

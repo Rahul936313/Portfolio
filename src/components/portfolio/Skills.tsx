@@ -19,12 +19,12 @@ export function Skills() {
 
   return (
     <Section id="skills" eyebrow="skills & stack" title={<>Tools I use to <span className="text-gradient">build</span></>}>
-      <div className="flex flex-wrap gap-2 mb-8">
+      <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
         {cats.map((c) => (
           <button
             key={c}
             onClick={() => setActive(c)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+            className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
               active === c ? "bg-gradient-primary text-white glow" : "glass hover:border-[var(--neon-cyan)]"
             }`}
           >
@@ -33,7 +33,7 @@ export function Skills() {
         ))}
       </div>
       <AnimatePresence mode="popLayout">
-        <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3">
           {items.map((s, i) => (
             <motion.div
               key={s.name}
@@ -43,11 +43,11 @@ export function Skills() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ delay: i * 0.03 }}
               whileHover={{ y: -4, rotate: -1 }}
-              className="glass rounded-xl p-4 text-center group cursor-default relative overflow-hidden"
+              className="glass rounded-xl p-3 sm:p-4 text-center group cursor-default relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-neon opacity-0 group-hover:opacity-10 transition-opacity" />
-              <div className="font-medium relative">{s.name}</div>
-              <div className="text-[10px] font-mono text-muted-foreground mt-1 relative">{s.group}</div>
+              <div className="font-medium text-xs sm:text-sm relative">{s.name}</div>
+              <div className="text-[8px] sm:text-[10px] font-mono text-muted-foreground mt-1 relative">{s.group}</div>
             </motion.div>
           ))}
         </motion.div>
