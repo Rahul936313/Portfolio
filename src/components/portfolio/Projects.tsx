@@ -52,7 +52,7 @@ function TiltCard({ children }: { children: React.ReactNode }) {
 export function Projects() {
   return (
     <Section id="projects" eyebrow="featured work" title={<>Projects that <span className="text-gradient">ship</span></>}>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {projects.map((p, i) => (
           <motion.div
             key={p.title}
