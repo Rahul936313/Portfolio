@@ -21,17 +21,13 @@ export function Contact() {
             {
               icon: Mail,
               label: "Email",
-              value: "rsnr936313@gmail.com", 
-              
+              value: "rsnr936313@gmail.com",
             },
             { icon: Phone, label: "Phone", value: "+91 9460309339" },
             { icon: MapPin, label: "Location", value: "Jaipur, Rajasthan, India" },
           ].map((c, i) => (
-            <motion.a
+            <motion.div
               key={c.label}
-              href={c.href}
-              target={c.target}
-              rel={c.rel}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -39,12 +35,12 @@ export function Contact() {
               whileHover={{ x: 4 }}
               className="glass rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:border-[var(--neon-cyan)] transition text-sm sm:text-base"
             >
-              <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0"><c.icon size={16} /></div>
-              <div className="min-w-0">
-                <div className="text-xs font-mono text-muted-foreground">{c.label}</div>
-                <div className="font-medium text-xs sm:text-sm truncate">{c.value}</div>
-              </div>
-            </motion.a>
+                <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0"><c.icon size={16} /></div>
+                <div className="min-w-0">
+                  <div className="text-xs font-mono text-muted-foreground">{c.label}</div>
+                  <div className="font-medium text-xs sm:text-sm truncate">{c.value}</div>
+                </div>
+              </motion.div>
           ))}
           <div className="flex gap-2 sm:gap-3 pt-2">
             <a href="https://github.com/Rahul936313" target="_blank" rel="noreferrer" className="glass p-2.5 sm:p-3 rounded-xl hover:text-[var(--neon-cyan)] hover:scale-110 transition"><Github size={18} /></a>
