@@ -13,7 +13,8 @@ export function Particles() {
     resize();
     window.addEventListener("resize", resize);
     const colors = ["#5eead4", "#818cf8", "#c084fc", "#f0abfc"];
-    const dots = Array.from({ length: 70 }, () => ({
+    const count = window.innerWidth < 640 ? 30 : window.innerWidth < 1024 ? 50 : 70;
+    const dots = Array.from({ length: count }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.3,
