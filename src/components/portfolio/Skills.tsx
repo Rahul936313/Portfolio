@@ -12,10 +12,10 @@ const groups = {
 export function Skills() {
   const cats = ["All", ...Object.keys(groups)];
   const [active, setActive] = useState<string>("All");
-  const items =
+  const items: { name: string; group: string }[] =
     active === "All"
       ? Object.entries(groups).flatMap(([g, arr]) => arr.map((n) => ({ name: n, group: g })))
-      : (groups as any)[active].map((n: string) => ({ name: n, group: active }));
+      : (groups as Record<string, string[]>)[active].map((n) => ({ name: n, group: active }));
 
   return (
     <Section id="skills" eyebrow="skills & stack" title={<>Tools I use to <span className="text-gradient">build</span></>}>
