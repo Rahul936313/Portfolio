@@ -6,7 +6,7 @@ const groups = {
   Languages: ["Python", "Java", "C++", "SQL", "TypeScript", "React", "HTML", "CSS"],
   "Frameworks & Libraries": ["NumPy", "Pandas", "Matplotlib", "scikit-learn", "FastAPI"],
   Databases: ["MongoDB", "MySQL"],
-  Tools: ["Git", "GitHub Copilot", "Cursor", "Claude AI"],
+  Tools: ["Git", "GitHub Copilot", "Cursor", "Claude AI","Excel", "VS Code", "Power BI"],
 };
 
 export function Skills() {

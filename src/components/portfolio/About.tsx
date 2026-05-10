@@ -3,7 +3,7 @@ import { Section } from "./Section";
 import { Brain, Code2, Rocket, Sparkles } from "lucide-react";
 
 const stats = [
-  { label: "Projects Built", value: "10+" },
+  { label: "Projects Built", value: "5+" },
   { label: "Tech Stack", value: "15+" },
   { label: "CGPA", value: "8.08" },
   { label: "Hackathons", value: "SIH'25" },

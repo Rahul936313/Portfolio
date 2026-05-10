@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
 import rahulImage from "@/assets/rahul.jpg?url";
+import resumeUrl from "@/assets/resume.pdf?url";
 
 const phrases = [
   "AI & Data Science Developer",
@@ -74,7 +75,7 @@ export function Hero() {
             <a href="#projects" className="group inline-flex items-center gap-2 bg-gradient-primary px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium glow hover:scale-105 transition-transform">
               View Projects <ArrowRight size={16} className="group-hover:translate-x-1 transition" />
             </a>
-            <a href="/resume.pdf" download className="inline-flex items-center gap-2 glass px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium hover:border-[var(--neon-cyan)] transition">
+            <a href={resumeUrl} download className="inline-flex items-center gap-2 glass px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium hover:border-[var(--neon-cyan)] transition">
               <Download size={16} /> Resume
             </a>
             <a href="#contact" className="inline-flex items-center gap-2 glass px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium hover:border-[var(--neon-purple)] transition">

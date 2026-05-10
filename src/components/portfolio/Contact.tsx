@@ -1,17 +1,16 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Section } from "./Section";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Download } from "lucide-react";
+import resumeUrl from "@/assets/resume.pdf?url";
 
 export function Contact() {
-  const [sent, setSent] = useState(false);
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const subject = encodeURIComponent(`Portfolio contact — ${fd.get("name")}`);
     const body = encodeURIComponent(`${fd.get("message")}\n\n— ${fd.get("name")} (${fd.get("email")})`);
-    window.location.href = `mailto:rsnr936313@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=rsnr936313@gmail.com&su=${subject}&body=${body}`;
+    window.open(gmailUrl, "_blank");
   };
 
   return (
@@ -19,13 +18,20 @@ export function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-6 md:gap-8">
         <div className="space-y-3 sm:space-y-4 order-2 md:order-1">
           {[
-            { icon: Mail, label: "Email", value: "rsnr936313@gmail.com", href: "mailto:rsnr936313@gmail.com" },
-            { icon: Phone, label: "Phone", value: "+91 9460309339", href: "tel:+919460309339" },
+            {
+              icon: Mail,
+              label: "Email",
+              value: "rsnr936313@gmail.com", 
+              
+            },
+            { icon: Phone, label: "Phone", value: "+91 9460309339" },
             { icon: MapPin, label: "Location", value: "Jaipur, Rajasthan, India" },
           ].map((c, i) => (
             <motion.a
               key={c.label}
               href={c.href}
+              target={c.target}
+              rel={c.rel}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -44,6 +50,9 @@ export function Contact() {
             <a href="https://github.com/Rahul936313" target="_blank" rel="noreferrer" className="glass p-2.5 sm:p-3 rounded-xl hover:text-[var(--neon-cyan)] hover:scale-110 transition"><Github size={18} /></a>
             <a href="https://www.linkedin.com/in/rahul-singh-nirwan-41303a323/" target="_blank" rel="noreferrer" className="glass p-2.5 sm:p-3 rounded-xl hover:text-[var(--neon-blue)] hover:scale-110 transition"><Linkedin size={18} /></a>
           </div>
+          <a href={resumeUrl} download className="glass rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:border-[var(--neon-cyan)] transition text-sm sm:text-base font-medium max-w-max">
+            <Download size={16} /> Download Resume
+          </a>
         </div>
         <motion.form
           onSubmit={onSubmit}
@@ -59,7 +68,7 @@ export function Contact() {
           </div>
           <textarea required name="message" rows={4} placeholder="Tell me about your project..." className="w-full bg-background/50 border border-border rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[var(--neon-purple)] transition resize-none" />
           <button type="submit" className="w-full inline-flex items-center justify-center gap-2 bg-gradient-primary py-2.5 sm:py-3 rounded-lg font-medium text-sm glow hover:scale-[1.02] transition">
-            {sent ? "Opening mail client…" : <>Send Message <Send size={14} /></>}
+            Send Message <Send size={14} />
           </button>
         </motion.form>
       </div>
