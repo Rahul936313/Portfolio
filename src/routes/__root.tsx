@@ -72,14 +72,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Rahul Singh — AI & Data Science Developer" },
+      { name: "description", content: "Portfolio of Rahul Singh, B.Tech CSE student specializing in AI & Data Science. Building intelligent, interactive, and impactful digital experiences." },
+      { name: "author", content: "Rahul Singh" },
+      { property: "og:title", content: "Rahul Singh — AI & Data Science Developer" },
+      { property: "og:description", content: "AI engineer & full-stack developer building intelligent products." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
