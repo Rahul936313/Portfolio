@@ -25,7 +25,8 @@ export function Particles() {
     const tick = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (const d of dots) {
-        d.x += d.vx; d.y += d.vy;
+        d.x += d.vx;
+        d.y += d.vy;
         if (d.x < 0 || d.x > canvas.width) d.vx *= -1;
         if (d.y < 0 || d.y > canvas.height) d.vy *= -1;
         ctx.beginPath();
@@ -39,7 +40,10 @@ export function Particles() {
       raf = requestAnimationFrame(tick);
     };
     tick();
-    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", resize);
+    };
   }, []);
   return <canvas ref={ref} className="fixed inset-0 -z-10 pointer-events-none opacity-60" />;
 }

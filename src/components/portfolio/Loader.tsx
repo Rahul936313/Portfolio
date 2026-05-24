@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 
 export function Loader() {
   const [done, setDone] = useState(false);
-  useEffect(() => { const t = setTimeout(() => setDone(true), 1600); return () => clearTimeout(t); }, []);
+  useEffect(() => {
+    const t = setTimeout(() => setDone(true), 1600);
+    return () => clearTimeout(t);
+  }, []);
   return (
     <AnimatePresence>
       {!done && (
@@ -14,14 +17,18 @@ export function Loader() {
         >
           <div className="text-center">
             <motion.div
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               className="text-sm text-muted-foreground mb-4"
             >
-              <span className="text-[var(--neon-cyan)]">$</span> initializing portfolio<span className="animate-blink">_</span>
+              <span className="text-[var(--neon-cyan)]">$</span> initializing portfolio
+              <span className="animate-blink">_</span>
             </motion.div>
             <div className="w-64 h-1 bg-muted rounded-full overflow-hidden">
               <motion.div
-                initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 1.4 }}
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 1.4 }}
                 className="h-full bg-gradient-neon"
               />
             </div>
