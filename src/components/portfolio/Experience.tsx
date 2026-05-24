@@ -3,15 +3,43 @@ import { Section } from "./Section";
 import { Trophy, BarChart3, Plane, GraduationCap } from "lucide-react";
 
 const items = [
-  { icon: Trophy, title: "Smart India Hackathon 2025", desc: "Participant — building solutions for national-scale problem statements.", tag: "2025" },
-  { icon: BarChart3, title: "Deloitte Data Analytics Job Simulation", desc: "Hands-on data analysis and business intelligence workflows.", tag: "Forage" },
-  { icon: Plane, title: "British Airways Data Science Simulation", desc: "Customer review NLP, predictive modelling, and stakeholder reporting.", tag: "Forage" },
-  { icon: GraduationCap, title: "Tutedude Data Science Course", desc: "Structured learning path covering ML, statistics, and Python.", tag: "Cert." },
+  {
+    icon: Trophy,
+    title: "Smart India Hackathon 2025",
+    desc: "Participant — building solutions for national-scale problem statements.",
+    tag: "2025",
+  },
+  {
+    icon: BarChart3,
+    title: "Deloitte Data Analytics Job Simulation",
+    desc: "Hands-on data analysis and business intelligence workflows.",
+    tag: "Forage",
+  },
+  {
+    icon: Plane,
+    title: "British Airways Data Science Simulation",
+    desc: "Customer review NLP, predictive modelling, and stakeholder reporting.",
+    tag: "Forage",
+  },
+  {
+    icon: GraduationCap,
+    title: "Tutedude Data Science Course",
+    desc: "Structured learning path covering ML, statistics, and Python.",
+    tag: "Cert.",
+  },
 ];
 
 export function Experience() {
   return (
-    <Section id="experience" eyebrow="experience" title={<>Achievements & <span className="text-gradient">milestones</span></>}>
+    <Section
+      id="experience"
+      eyebrow="experience"
+      title={
+        <>
+          Achievements & <span className="text-gradient">milestones</span>
+        </>
+      }
+    >
       <div className="relative">
         <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[var(--neon-purple)] to-transparent" />
         <div className="space-y-6 md:space-y-8">
@@ -26,12 +54,16 @@ export function Experience() {
             >
               <div className="absolute left-3 md:left-1/2 -translate-x-1/2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-gradient-neon glow z-10" />
               <div className="md:w-1/2 pl-10 md:pl-0">
-                <div className={`glass rounded-xl p-4 sm:p-5 hover:border-[var(--neon-cyan)] transition ${i % 2 ? "md:mr-12" : "md:ml-12"}`}>
+                <div
+                  className={`glass rounded-xl p-4 sm:p-5 hover:border-[var(--neon-cyan)] transition ${i % 2 ? "md:mr-12" : "md:ml-12"}`}
+                >
                   <div className="flex items-center gap-2 sm:gap-3 mb-2">
                     <div className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
                       <it.icon size={14} />
                     </div>
-                    <span className="text-[9px] sm:text-[10px] font-mono px-2 py-1 rounded-md glass whitespace-nowrap">{it.tag}</span>
+                    <span className="text-[9px] sm:text-[10px] font-mono px-2 py-1 rounded-md glass whitespace-nowrap">
+                      {it.tag}
+                    </span>
                   </div>
                   <h3 className="font-bold mb-1 text-sm sm:text-base leading-tight">{it.title}</h3>
                   <p className="text-xs sm:text-sm text-muted-foreground">{it.desc}</p>

@@ -4,7 +4,15 @@ import { GraduationCap } from "lucide-react";
 
 export function Education() {
   return (
-    <Section id="education" eyebrow="education" title={<>Academic <span className="text-gradient">journey</span></>}>
+    <Section
+      id="education"
+      eyebrow="education"
+      title={
+        <>
+          Academic <span className="text-gradient">journey</span>
+        </>
+      }
+    >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +29,9 @@ export function Education() {
           <div>
             <div className="font-mono text-xs text-[var(--neon-cyan)] mb-1">2024 — 2028</div>
             <h3 className="text-xl sm:text-2xl font-bold mb-1">Poornima University</h3>
-            <p className="text-sm sm:text-base text-muted-foreground">Bachelor of Computer Science — AI & Data Science</p>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              Bachelor of Computer Science — AI & Data Science
+            </p>
           </div>
           <div className="col-span-2 md:col-span-1 text-center md:text-right">
             <div className="text-3xl sm:text-4xl font-bold text-gradient">8.08</div>

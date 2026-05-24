@@ -10,26 +10,50 @@ const stats = [
 ];
 
 const traits = [
-  { icon: Brain, title: "AI-First Thinking", desc: "Architecting ML models that solve real-world problems." },
-  { icon: Code2, title: "Full-Stack Craft", desc: "From data pipelines to polished interactive UIs." },
+  {
+    icon: Brain,
+    title: "AI-First Thinking",
+    desc: "Architecting ML models that solve real-world problems.",
+  },
+  {
+    icon: Code2,
+    title: "Full-Stack Craft",
+    desc: "From data pipelines to polished interactive UIs.",
+  },
   { icon: Rocket, title: "Ship Fast", desc: "Iterating quickly with modern tools and clean code." },
-  { icon: Sparkles, title: "Design Sense", desc: "Building experiences that feel as good as they perform." },
+  {
+    icon: Sparkles,
+    title: "Design Sense",
+    desc: "Building experiences that feel as good as they perform.",
+  },
 ];
 
 export function About() {
   return (
-    <Section id="about" eyebrow="about me" title={<>The <span className="text-gradient">developer</span> behind the code</>}>
+    <Section
+      id="about"
+      eyebrow="about me"
+      title={
+        <>
+          The <span className="text-gradient">developer</span> behind the code
+        </>
+      }
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
         <div className="space-y-4 sm:space-y-5 text-muted-foreground leading-relaxed text-sm sm:text-base">
           <p>
-            I'm <span className="text-foreground font-medium">Rahul Singh</span>, a B.Tech CSE student specializing in
-            <span className="text-[var(--neon-cyan)]"> Artificial Intelligence and Data Science</span>. I love turning
-            ideas into innovative, secure, and user-friendly applications.
+            I'm <span className="text-foreground font-medium">Rahul Singh</span>, a B.Tech CSE
+            student specializing in
+            <span className="text-[var(--neon-cyan)]">
+              {" "}
+              Artificial Intelligence and Data Science
+            </span>
+            . I love turning ideas into innovative, secure, and user-friendly applications.
           </p>
           <p>
-            My focus is on AI, full-stack development, machine learning, and shipping
-            impactful projects that solve real problems — bridging research-grade
-            models with delightful product experiences.
+            My focus is on AI, full-stack development, machine learning, and shipping impactful
+            projects that solve real problems — bridging research-grade models with delightful
+            product experiences.
           </p>
           <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4">
             {stats.map((s, i) => (

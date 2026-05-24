@@ -6,7 +6,7 @@ const groups = {
   Languages: ["Python", "Java", "C++", "SQL", "TypeScript", "React", "HTML", "CSS"],
   "Frameworks & Libraries": ["NumPy", "Pandas", "Matplotlib", "scikit-learn", "FastAPI"],
   Databases: ["MongoDB", "MySQL"],
-  Tools: ["Git", "GitHub Copilot", "Cursor", "Claude AI","Excel", "VS Code", "Power BI"],
+  Tools: ["Git", "GitHub Copilot", "Cursor", "Claude AI", "Excel", "VS Code", "Power BI"],
 };
 
 export function Skills() {
@@ -18,14 +18,24 @@ export function Skills() {
       : (groups as Record<string, string[]>)[active].map((n) => ({ name: n, group: active }));
 
   return (
-    <Section id="skills" eyebrow="skills & stack" title={<>Tools I use to <span className="text-gradient">build</span></>}>
+    <Section
+      id="skills"
+      eyebrow="skills & stack"
+      title={
+        <>
+          Tools I use to <span className="text-gradient">build</span>
+        </>
+      }
+    >
       <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
         {cats.map((c) => (
           <button
             key={c}
             onClick={() => setActive(c)}
             className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
-              active === c ? "bg-gradient-primary text-white glow" : "glass hover:border-[var(--neon-cyan)]"
+              active === c
+                ? "bg-gradient-primary text-white glow"
+                : "glass hover:border-[var(--neon-cyan)]"
             }`}
           >
             {c}
@@ -33,7 +43,10 @@ export function Skills() {
         ))}
       </div>
       <AnimatePresence mode="popLayout">
-        <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3">
+        <motion.div
+          layout
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3"
+        >
           {items.map((s, i) => (
             <motion.div
               key={s.name}
@@ -47,7 +60,9 @@ export function Skills() {
             >
               <div className="absolute inset-0 bg-gradient-neon opacity-0 group-hover:opacity-10 transition-opacity" />
               <div className="font-medium text-xs sm:text-sm relative">{s.name}</div>
-              <div className="text-[8px] sm:text-[10px] font-mono text-muted-foreground mt-1 relative">{s.group}</div>
+              <div className="text-[8px] sm:text-[10px] font-mono text-muted-foreground mt-1 relative">
+                {s.group}
+              </div>
             </motion.div>
           ))}
         </motion.div>

@@ -25,7 +25,10 @@ export function Navbar() {
         const el = document.getElementById(id);
         if (el) {
           const r = el.getBoundingClientRect();
-          if (r.top <= 120 && r.bottom >= 120) { setActive(id); break; }
+          if (r.top <= 120 && r.bottom >= 120) {
+            setActive(id);
+            break;
+          }
         }
       }
     };
@@ -51,7 +54,9 @@ export function Navbar() {
                 <a
                   href={l.href}
                   className={`relative px-3 py-1.5 text-xs sm:text-sm rounded-lg transition-colors ${
-                    active === l.href.slice(1) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    active === l.href.slice(1)
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {active === l.href.slice(1) && (
@@ -78,7 +83,12 @@ export function Navbar() {
               className="md:hidden glass rounded-2xl mt-2 p-3 flex flex-col gap-1"
             >
               {links.map((l) => (
-                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="px-3 py-2.5 rounded-lg text-sm hover:bg-white/5 transition">
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="px-3 py-2.5 rounded-lg text-sm hover:bg-white/5 transition"
+                >
                   {l.label}
                 </a>
               ))}
