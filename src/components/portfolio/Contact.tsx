@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
 import { Mail, Phone, MapPin, Github, Linkedin, Send, Download } from "lucide-react";
-import resumeUrl from "@/assets/resume.pdf?url";
+
+const resumeUrl = "/resume.pdf";
 
 export function Contact() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {

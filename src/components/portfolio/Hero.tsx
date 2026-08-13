@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
 import rahulImage from "@/assets/rahul.jpg?url";
-import resumeUrl from "@/assets/resume.pdf?url";
+
+const resumeUrl = "/resume.pdf";
 
 const phrases = [
   "AI & Data Science Developer",
