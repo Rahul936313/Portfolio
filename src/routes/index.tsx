@@ -9,7 +9,6 @@ import { Education } from "@/components/portfolio/Education";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { Particles } from "@/components/portfolio/Particles";
-import { Cursor } from "@/components/portfolio/Cursor";
 import { Loader } from "@/components/portfolio/Loader";
 import { ScrollProgress } from "@/components/portfolio/ScrollProgress";
 
@@ -21,7 +20,6 @@ export function Index() {
   return (
     <div className="relative min-h-screen">
       <Loader />
-      <Cursor />
       <ScrollProgress />
       <Particles />
       <Navbar />
