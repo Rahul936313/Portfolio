@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
-import { Trophy, BarChart3, Plane, GraduationCap } from "lucide-react";
+import { Trophy, BarChart3, Plane, GraduationCap, Briefcase } from "lucide-react";
 
 const items = [
   { icon: Trophy, title: "Smart India Hackathon 2025", desc: "Participant — building solutions for national-scale problem statements.", tag: "2025" },
   { icon: BarChart3, title: "Deloitte Data Analytics Job Simulation", desc: "Hands-on data analysis and business intelligence workflows.", tag: "Forage" },
   { icon: Plane, title: "British Airways Data Science Simulation", desc: "Customer review NLP, predictive modelling, and stakeholder reporting.", tag: "Forage" },
   { icon: GraduationCap, title: "Tutedude Data Science Course", desc: "Structured learning path covering ML, statistics, and Python.", tag: "Cert." },
+  { icon: Briefcase, title: "XYlofy AI Internship", desc: "AI and Data Science internship focusing on machine learning solutions and data-driven insights.", tag: "June - July 2026" },
 ];
 
 export function Experience() {

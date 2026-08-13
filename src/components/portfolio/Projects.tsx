@@ -11,13 +11,15 @@ const projects = [
     tech: ["Python", "scikit-learn", "PyTorch"],
     gradient: "from-cyan-500 to-blue-600",
     emoji: "🎯",
+    liveLink: "https://placement-prediction-project.streamlit.app/",
   },
   {
-    title: "Password Manager",
-    desc: "Secure password manager with encryption to safely store, view, and delete passwords.",
-    tech: ["Python", "Streamlit"],
+    title: "Solace",
+    desc: "Emotionally intelligent, multilingual AI designed to feel more like a companion than a chatbot. Focuses on long-term engagement, adaptive personality, and natural conversation.",
+    tech: ["AI", "Multilingual", "NLP"],
     gradient: "from-purple-500 to-pink-600",
-    emoji: "🔐",
+    emoji: "🤖",
+    liveLink: "https://lonely-lonely.lovable.app/",
   },
   {
     title: "Gym Website",
@@ -25,6 +27,7 @@ const projects = [
     tech: ["React", "Vite", "Tailwind", "TypeScript"],
     gradient: "from-emerald-500 to-cyan-600",
     emoji: "💪",
+    liveLink: "https://infinityxfitness.vercel.app/",
   },
 ];
 
@@ -88,7 +91,7 @@ export function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-2 flex-col sm:flex-row">
-                  <a href="#" className="flex-1 inline-flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-lg bg-gradient-primary font-medium hover:scale-105 transition">
+                  <a href={p.liveLink} target="_blank" rel="noreferrer" className="flex-1 inline-flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-lg bg-gradient-primary font-medium hover:scale-105 transition">
                     <ExternalLink size={12} /> Live
                   </a>
                   <a href="https://github.com/Rahul936313" target="_blank" rel="noreferrer" className="flex-1 inline-flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-lg glass hover:border-[var(--neon-cyan)] transition">

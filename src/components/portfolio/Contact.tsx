@@ -9,8 +9,19 @@ export function Contact() {
     const fd = new FormData(e.currentTarget);
     const subject = encodeURIComponent(`Portfolio contact — ${fd.get("name")}`);
     const body = encodeURIComponent(`${fd.get("message")}\n\n— ${fd.get("name")} (${fd.get("email")})`);
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=rsnr936313@gmail.com&su=${subject}&body=${body}`;
-    window.open(gmailUrl, "_blank");
+    
+    // Check if device is mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // For mobile, use mailto protocol which opens native email or Gmail app directly
+      const mailtoUrl = `mailto:rsnr936313@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoUrl;
+    } else {
+      // For desktop, use Gmail web interface
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=rsnr936313@gmail.com&su=${subject}&body=${body}`;
+      window.open(gmailUrl, "_blank");
+    }
   };
 
   return (
