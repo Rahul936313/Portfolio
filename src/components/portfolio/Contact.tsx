@@ -58,7 +58,7 @@ export function Contact() {
             <a href="https://github.com/Rahul936313" target="_blank" rel="noreferrer" className="glass p-2.5 sm:p-3 rounded-xl hover:text-[var(--neon-cyan)] hover:scale-110 transition"><Github size={18} /></a>
             <a href="https://www.linkedin.com/in/rahul-singh-nirwan-41303a323/" target="_blank" rel="noreferrer" className="glass p-2.5 sm:p-3 rounded-xl hover:text-[var(--neon-blue)] hover:scale-110 transition"><Linkedin size={18} /></a>
           </div>
-          <a href={resumeUrl} download className="glass rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:border-[var(--neon-cyan)] transition text-sm sm:text-base font-medium max-w-max">
+          <a href={resumeUrl} download="Rahul-Singh-Resume.pdf" target="_blank" rel="noreferrer" className="glass rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:border-[var(--neon-cyan)] transition text-sm sm:text-base font-medium max-w-max">
             <Download size={16} /> Download Resume
           </a>
         </div>
